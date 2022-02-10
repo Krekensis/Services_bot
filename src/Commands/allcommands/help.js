@@ -201,6 +201,34 @@ module.exports = new Command({
         }
 
         //6
+        const armanager = {
+            "footer":{
+                "text":"All embeds will be specially made according to you."
+            },
+            "image":{
+                "url":"https:\/\/media.discordapp.net\/attachments\/909344848761466881\/941201275876442132\/PicsArt_02-10-10.47.43.jpg",
+                "proxy_url":"https:\/\/images-ext-2.discordapp.net\/external\/0liNcig69j-57v0HpYd0Mf8hKvxyTp6ALd5BeN_b7Ck\/https\/media.discordapp.net\/attachments\/909344848761466881\/941201275876442132\/PicsArt_02-10-10.47.43.jpg",
+                "width":1398,
+                "height":880
+            },
+            "fields":[
+                {
+                    "name":"<:am_b:938690505531858965> Description",
+                    "value":"`Autoreact manager` will help you manage all private autoreacts in your server easily. It includes autonomous adding\/removing of ar(s), so users can easily add their ar(s) instead of relying on a staff to do it for them.",
+                    "inline":false
+                },
+                {
+                    "name":"<:am_b:938690505531858965> Features",
+                    "value":"<:nx_tick:910049767910952961> List of your autoreacts.\n<:nx_tick:910049767910952961> `Add`\/`Remove` autoreacts.\n<:nx_tick:910049767910952961> Add reacts with emoji ID.\n<:nx_tick:910049767910952961> Remove reacts with index no.\n<:nx_tick:910049767910952961> Max autoreacts depending on roles.\n<:nx_tick:910049767910952961> Automatically removes an autoreact once bot can't access the emoji.",
+                    "inline":false
+                }
+            ],
+            "color":16575144,
+            "type":"rich",
+            "title":"**Autoreact Manager**"
+        }
+
+        //7
         const afksystem = {
             "footer": {
                 "text": "All embeds will be specially made according to you."
@@ -228,7 +256,7 @@ module.exports = new Command({
             "title": "**Advanced AFK**"
         }
 
-        //7
+        //8
         const snipes = {
             "footer": {
                 "text": "All embeds will be specially made according to you."
@@ -256,7 +284,7 @@ module.exports = new Command({
             "title": "**Snipe +  Bulk snipe**"
         }
 
-        //8 
+        //9
         const race = {
             "footer": {
                 "text": "All embeds will be specially made according to you."
@@ -284,6 +312,7 @@ module.exports = new Command({
             "title": "**Race Minigame**"
         }
 
+        //10
         const statusrole = {
             "footer": {
                 "text": "All embeds will be specially made according to you."
@@ -311,6 +340,7 @@ module.exports = new Command({
             "title": "**Status Update Actions**"
         }
 
+        //11
         const broles = {
             "footer": {
                 "text": "All embeds will be specially made according to you."
@@ -417,7 +447,7 @@ module.exports = new Command({
             .setDescription("For my custom bot :)")
             .setImage("https://images-ext-2.discordapp.net/external/uJ3C0BMa6VC8f8jYeCVFygTu3HuYFNWMsHp_ZVgrYTA/https/media.discordapp.net/attachments/804352046534492250/918076805968195604/7997EAAAAASUVORK5CYII.png")
 
-        const embeds = [icalc, heiststats, amarishop, dnsystem, channelmanager, afksystem, snipes, race, statusrole, broles]
+        const embeds = [icalc, heiststats, amarishop, dnsystem, channelmanager, channelmanager, afksystem, snipes, race, statusrole, broles]
         const bannerembeds = [banner1, banner2, banner3, banner4, icon12, amari, hallow, neox]
 
         const image = new Discord.MessageAttachment('https://media.discordapp.net/attachments/909344848761466881/940142233653510154/OrqiYQCjvvAAAAAASUVORK5CYII.png', "Help_Command.png")
