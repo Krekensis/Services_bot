@@ -5,4 +5,8 @@ module.exports = new Event("ready", client => {
     
     client.user.setActivity(`${client.guilds.cache.size} servers`, { type: 'WATCHING' });
     client.user.setStatus('idle');
+
+    setInterval(async () => {
+        client.user.setActivity(`${client.guilds.cache.size} servers`, { type: 'WATCHING' });
+    }, 300000);
 });
