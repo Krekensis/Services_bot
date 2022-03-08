@@ -331,7 +331,46 @@ module.exports = new Command({
             "title": "**Button \/ Dropdown Roles**"
         }
 
-        const embeds = [icalc, heiststats, amarishop, dnsystem, channelmanager, armanager, afksystem, snipes, race, statusrole, broles]
+        //12
+        const misc = {
+            "fields": [
+                {
+                    "name": "<:am_b:938690505531858965> Donation System",
+                    "value": "<:nx_tick:910049767910952961> Donation logs.\n<:nx_tick:910049767910952961> Donation goal progress.\n<:nx_tick:910049767910952961> Add item values directly. (if req)\n<:nx_tick:910049767910952961> Auto updating lb in channel. (if req)\n<:nx_tick:910049767910952961> Add donation directly from dn req embed. (if req)\n\u200c",
+                    "inline": false
+                },
+                {
+                    "name": "<:am_b:938690505531858965> Private Role Manager",
+                    "value": "<:nx_tick:910049767910952961> `Create`\/`Reset` role.\n<:nx_tick:910049767910952961> `Add`\/`Remove` role to friends.\n<:nx_tick:910049767910952961> Change role color.\n<:nx_tick:910049767910952961> `Add`\/`Remove` role icon (if req)\n<:nx_tick:910049767910952961> Role info + List of members.\n<:nx_tick:910049767910952961> Max members depending on roles.\n\u200c",
+                    "inline": false
+                },
+                {
+                    "name": "<:am_b:938690505531858965> Heist Request (Similar to giveaway request)",
+                    "value": "<:nx_tick:910049767910952961> `Accept` \/ `Decline` buttons.\n<:nx_tick:910049767910952961> Auto note donation. (if req)\n<:nx_tick:910049767910952961> Auto host heist\n(Un\/viewlock channel according to req) + (Ping heist role)\n\u200c",
+                    "inline": false
+                },
+                {
+                    "name": "<:am_b:938690505531858965> Guess the number",
+                    "value": "<:nx_tick:910049767910952961> Auto `unlock` \/ `lock` with ping.\n<:nx_tick:910049767910952961> `Time taken`, `Participant size`, `Attempts`\n\u200c",
+                    "inline": false
+                },
+                {
+                    "name": "<:am_b:938690505531858965> Split or Steal",
+                    "value": "<:nx_tick:910049767910952961> Giveaway with 2 winners and ping.\n<:nx_tick:910049767910952961> Buttons for winners to choose `split` or `steal`\n\u200c",
+                    "inline": false
+                },
+                {
+                    "name": "<:am_b:938690505531858965> UNO",
+                    "value": "<:nx_tick:910049767910952961> All the following commands.\n```\ncreate, cancel, play, join, start, \ntable, hand, draw, quickend, kick, \nleave, callout, uno!, settings.\n```",
+                    "inline": false
+                }
+            ],
+            "color": 16575144,
+            "type": "rich",
+            "title": "**Misc Commands (No preview)**"
+        }
+
+        const embeds = [icalc, heiststats, amarishop, dnsystem, channelmanager, armanager, afksystem, snipes, race, statusrole, broles, misc]
 
         let first = new Discord.MessageButton()
             .setEmoji('<:first2:926539374546542622>')
@@ -389,7 +428,7 @@ module.exports = new Command({
         let butts = [dfirst, dprevious, page, next, last]
         const m = await message.reply({ embeds: [embeds[0]], components: [new Discord.MessageActionRow().addComponents(butts)] })
         const filter = (b) => { if (b.user.id === message.author.id) return true; return b.reply({ content: "<:nx_cross:914921124670890064> These are not for you.", ephemeral: true }) };
-        const collector = await m.createMessageComponentCollector({ filter: filter, time: 300000 });
+        const collector = await m.createMessageComponentCollector({ filter: filter });
 
 
         collector.on("collect", async (i) => {
